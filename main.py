@@ -3,8 +3,8 @@ import sys
 from service import service
 from datetime import datetime
 
+
 def main():
-    #Leitura do arquivo
     if len(sys.argv) <= 1:
         print('Faltou passar arquivo por parâmetro')
 

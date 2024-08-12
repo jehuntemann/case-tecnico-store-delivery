@@ -1,10 +1,11 @@
 import psycopg2
 
+
 class MyDatabase():
     def __init__(self, host="db",
-                       database="postgres",
-                       user="postgres",
-                       password="postgres" ):
+                 database="postgres",
+                 user="postgres",
+                 password="postgres"):
         self.conn = None
         self.cur = None
         try:
@@ -22,9 +23,3 @@ class MyDatabase():
     def close(self):
         self.cur.close()
         self.conn.close()
-
-# db = MyDatabase()
-# db.query("SELECT * FROM table;")
-# db.close()
-
-
