@@ -29,6 +29,7 @@ def execute(file, db_connection):
     db_connection.commit()
     logger.info('Process finished successfully')
 
+
 def _validate_cpf(cpf):
     if len(cpf) != 11:
         return False
