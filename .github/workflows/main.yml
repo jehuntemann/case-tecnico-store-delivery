@@ -1,0 +1,9 @@
+jobs:
+  code_convention:
+    runs-on: ubuntu-latest
+    container: python:3.6-slim
+    steps:
+      - run: apk add make git build-base --no-cache
+      - run: pip install -r requirements.txt
+      - run: flake8
+      - run: pycodestyle
