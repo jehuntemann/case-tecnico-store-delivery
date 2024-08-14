@@ -2,24 +2,27 @@ from db import db
 import sys
 from service import service
 from datetime import datetime
+import logging
+logger = logging.getLogger(__name__)
 
 
 def main():
+    logging.basicConfig(level=logging.DEBUG)
+
     if len(sys.argv) <= 1:
-        print('Faltou passar arquivo por parâmetro')
+        logger.info('Missing file parameter')
 
     else:
-        print(f'lendo arquivo "{sys.argv[1]}"')
+        logger.info(f'Reading file "{sys.argv[1]}"')
         try:
             arquivo = sys.argv[1]
             with open(arquivo, 'r+') as file:
                 db_connection = db.MyDatabase()
-                service.run(file, db_connection)
+                service.execute(file, db_connection)
                 db_connection.close()
 
         except Exception as e:
-            print(e)
-
+            logger.error(e)
 
 if __name__ == '__main__':
     tic = datetime.now()

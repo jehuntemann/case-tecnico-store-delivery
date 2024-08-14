@@ -3,7 +3,7 @@ CREATE TABLE store_delivery (
     cpf VARCHAR(20) NOT NULL,
     is_private BOOLEAN NOT NULL,
     is_incomplete BOOLEAN NOT NULL,
-    last_purchase DATE,
+    last_purchase_date DATE,
     average_ticket DECIMAL(12, 2),
     ticket_last_purchase DECIMAL(12, 2),
     frequent_store VARCHAR(20),
